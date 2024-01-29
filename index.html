@@ -1,20 +1,23 @@
 <!doctype html>
-<html>
+<html class="h-full">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+   
     <link rel="stylesheet" type="text/css"
         href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps.css" />
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps-web.min.js"></script>
+    <link rel="stylesheet" href="output.css">
 </head>
 
 
-<body>
-    <div class="flex  justify-center mt-8">
-        <div class="w-[400px] h-[400px]" id="map">
+<body class="h-full">
+    <div class="flex h-full justify-center">
+        <div class="w-full h-full relative" id="map">
+            <div class="absolute bottom-0 left-0 w-full h-[39px] text-3xl text-white font-bold bg-black z-[99] f">
 
+            </div>
         </div>
     </div>
 

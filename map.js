@@ -20,20 +20,17 @@ function g() {
         },
         zoom: 10,
     });
-    // var ima = document.createElement("img")
-    // ima.src = "https://lh3.googleusercontent.com/ogw/ANLem4Z7Vua_4RQ7zk9z_fNvNuhyKqbqMstr1h-lplpl=s32-c-mo"
-    // ima.classList.add("rounded-full")
-    // var marker = new tt.Marker({
-    //     element: ima
-    // })
-    //     .setLngLat([106.8849, 10.907])
-    //     .addTo(map);
     var geolocateControl = new tt.GeolocateControl({
         showUserLocation: true,
         trackUserLocation: true,
         positionOptions: {
             enableHighAccuracy: true,
         }
+    });
+    geolocateControl.on("geolocate", (e) => {
+        document.querySelector(".f").innerHTML = `${e.coords.latitude}  ${e.coords.longitude}`;
+        var lglat = new tt.LngLat(e.coords.longitude, e.coords.latitude);
+        map.setCenter(lglat);
     });
     map.addControl(geolocateControl);
     map.addControl(nav, 'top-left');
